@@ -17,9 +17,9 @@ namespace WinFormsApp1
             builder.DataSource = @"DESKTOP-O4DS0L0";
             builder.InitialCatalog = "AndersonA";
             builder.IntegratedSecurity = true;// Windows認証のためtrue.サーバー認証にしている場合はfalseでユーザー名とパスワードを入れる
-            builder.TrustServerCertificate = true;
+            builder.TrustServerCertificate = true;// 6.B05_信頼されていない機関によって証明書チェーンが発行されましたのエラー対処
 
-            string sql = "select getdate()";// SQL文字列
+            string sql = "select * from Product";// SQL文字列
 
             DataTable dt = new DataTable();
             using (var connection = new SqlConnection(builder.ConnectionString))
